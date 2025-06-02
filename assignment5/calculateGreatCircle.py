@@ -12,14 +12,19 @@ lon2 = [129, 23, 13]
 
 R = 6378
 
-def load_angle(inp):
-    return (inp[0] + inp[1] / 60 + inp[2] / 3600)* math.pi/180
+def load_angle(inp, mode):
+    inp = list(inp)
+    if mode == "rad":
+        return (float(inp[0]) + float(inp[1]) / 60 + float(inp[2]) / 3600)* math.pi/180
+    if mode == "deg":
+        return float(inp[0]) + float(inp[1]) / 60 + float(inp[2]) / 3600
+    raise ValueError("mode keyword must be either rad or deg.")
 
 
-lam1 = load_angle(lat1)
-lam2 = load_angle(lat2)
-phi1 = load_angle(lon1)
-phi2 = load_angle(lon2)
+lam1 = load_angle(lat1, mode="rad")
+lam2 = load_angle(lat2, mode="rad")
+phi1 = load_angle(lon1, mode="rad")
+phi2 = load_angle(lon2, mode="rad")
 
 d = R * math.acos(math.cos(lam1)*math.cos(lam2)*math.cos(phi1 - phi2) + math.sin(lam1)*math.sin(lam2))
 
