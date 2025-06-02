@@ -1,5 +1,7 @@
 """
-This script calculates the Great-Circle distance in km from two coordinates
+This script calculates the Great-Circle distance in km from two coordinates. 
+The latitudes and longitudes must be given as lists. First entry is the full degree,
+second entry is in arcmins, third entry is in arcsecs. The distance will be printed out in the console.
 """
 import math
 import numpy as np
