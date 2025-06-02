@@ -31,6 +31,7 @@ for idx, row in d1calculated.iterrows():
     ax.plot([1,2], [float(d1measured["Drift Speed"][idx]), float(d2measured["Drift Speed"][idx])], color=d1calculated["Colour"][idx], linestyle="solid", marker='o')
 ax.set_xlim(0.75,2.25)
 ax.set_xticks([1,2])
+ax.set_xticklabels([r"$\delta_1$", r"$\delta_2$"])
 ax.set_xlabel("Time interval")
 ax.set_ylabel("Drift Speed [km/h]")
 ax.grid()
