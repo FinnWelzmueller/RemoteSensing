@@ -7,7 +7,7 @@ df_sar_july = pd.read_csv("sar_july.csv", delim_whitespace=True)
 df_modis_may = pd.read_csv("modis_may.csv", delim_whitespace=True)
 df_modis_july = pd.read_csv("modis_july.csv", delim_whitespace=True)
 
-fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(12,12))
+fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(12,9))
 ax[0,0].plot(df_sar_may["pixel_no"], df_sar_may["mean"], color="blue", label="SAR, May")
 ax[0,0].set_xlabel("Pixel")
 ax[0,0].set_ylabel(r"$\sigma_0$")
