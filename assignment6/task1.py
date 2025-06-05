@@ -6,7 +6,7 @@ import numpy as np
 def linear(m,x,b):
     return m*x + b
 def lin_fit(inp_x, inp_y, inp_y_err):
-    popt, pcov =  curve_fit(linear, inp_x, inp_y, sigma=inp_y_err, absolute_sigma=True)
+    popt, pcov =  curve_fit(linear, inp_x, inp_y)
     m, b = popt
     m_err, b_err = np.sqrt(np.diag(pcov))
     return m, m_err, b, b_err 
@@ -27,7 +27,7 @@ print(f"Standard deviation Amplitude: {np.around(np.std(df_july['Amplitude_HH_me
 
 m_m, m_err_m, b_m, b_err_m = lin_fit(df_may["pixel_no"], df_may["Amplitude_HH_mean"], df_may["Amplitude_HH_sigma"])
 print("----- fitting results for May -----")
-print(f"Slope: {np.around(m_m,4)} +- {np.around(m_err_m,4)}")
+print(f"Slope: {m_m} +- {m_err_m}")
 print(f"Intercept: {np.around(b_m,4)} +- {np.around(b_err_m,4)}")
 
 fig, ax = plt.subplots(nrows=2)
@@ -41,7 +41,7 @@ ax[0].set_ylim(0,900)
 
 m_j, m_err_j, b_j, b_err_j = lin_fit(df_july["pixel_no"], df_july["Amplitude_HH_mean"], df_july["Amplitude_HH_sigma"])
 print("----- fitting results for July -----")
-print(f"Slope: {np.around(m_j,4)} +- {np.around(m_err_j,4)}")
+print(f"Slope: {m_j} +- {m_err_j}")
 print(f"Intercept: {np.around(b_j,4)} +- {np.around(b_err_j,4)}")
 
 ax[1].plot(df_july["pixel_no"], df_july["Amplitude_HH_mean"], 'b.', label="Data")
