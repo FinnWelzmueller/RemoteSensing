@@ -10,8 +10,6 @@ def lin_fit(inp_x, inp_y, inp_y_err):
     m, b = popt
     m_err, b_err = np.sqrt(np.diag(pcov))
     return m, m_err, b, b_err 
-    
-    
 
 
 df_may = pd.read_csv("Amplitude_HH_may.csv", delim_whitespace=True)
