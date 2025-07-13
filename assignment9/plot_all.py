@@ -23,6 +23,7 @@ ax[0,0].set_xlim(0, max(chl1["pixel_no"]))
 ax[0,0].set_ylabel("CHL1")
 #ax[0,0].legend(loc="upper right")
 ax[0,0].grid()
+ax[0,0].set_title("Open Water")
 
 ax[1,0].plot(cdm1["pixel_no"], cdm1["CDM_mean_mean"], color='red', linestyle='solid', label="Track 1 - CDM")
 ax[1,0].set_xlim(0, max(cdm1["pixel_no"]))
@@ -41,6 +42,7 @@ ax[0,1].plot(chl2["pixel_no"], chl2["CHL1_mean_mean"], color='blue', linestyle='
 ax[0,1].set_xlim(0, max(chl2["pixel_no"]))
 #ax[0,1].legend(loc="upper right")
 ax[0,1].grid()
+ax[0,1].set_title("Coastal")
 
 ax[1,1].plot(cdm2["pixel_no"], cdm2["CDM_mean_mean"], color='red', linestyle='solid', label="Track 2 - CDM")
 ax[1,1].set_xlim(0, max(cdm2["pixel_no"]))
@@ -57,6 +59,7 @@ ax[0,2].plot(chl3["pixel_no"], chl3["CHL1_mean_mean"], color='blue', linestyle='
 ax[0,2].set_xlim(0, max(chl3["pixel_no"]))
 #ax[0,2].legend(loc="upper right")
 ax[0,2].grid()
+ax[0,2].set_title("Upwelling")
 
 ax[1,2].plot(cdm3["pixel_no"], cdm3["CDM_mean_mean"], color='red', linestyle='solid', label="Track 3 - CDM")
 ax[1,2].set_xlim(0, max(cdm3["pixel_no"]))
